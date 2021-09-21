@@ -77,12 +77,12 @@ def on_off_interface():
 
         cmd = f'ip link set dev {interface_choice}  down'
         res = os.popen(cmd).read()
-        print(f'{interface_choice} turned off  | Details => {res}')
+        print(f'{interface_choice} turned off ')
 
     elif choice == 2:
         cmd = f'ip link set dev {interface_choice}  up'
         res = os.popen(cmd).read()
-        print(f'{interface_choice} turned on | Details => {res} ')
+        print(f'{interface_choice} turned on ')
 
     else:
         print('Wrong option choosed')

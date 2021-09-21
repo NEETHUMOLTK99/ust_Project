@@ -44,7 +44,7 @@ while True:
 	elif ch == 9:
 		restart_network()
 	elif ch == 10:
-		change_hostname()
+		change_host_name()
 	elif ch == 11:
 		add_dns_server()
 	elif ch == 12:

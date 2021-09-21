@@ -4,15 +4,22 @@ import MySQLdb as mysql
 import time
 import json
 
-db = mysql.connect(host='localhost', user='root',
-                   password='root', db="INFORMATION_SCHEMA")
+db = mysql.connect(host='localhost', user='root', password='root', db="INFORMATION_SCHEMA")
 print(db)
 cur = db.cursor()
 
+#PROCESSLIST
+
+cur.execute("select ID,DB from PROCESSLIST")
+res1 = cur.fetchall()
+
+
+#Info_of_Database
 cur.execute('SHOW STATUS')
 res = cur.fetchall()
 
 r = dict(res)
+
 
 
 print(
@@ -28,5 +35,10 @@ print(
 print(
     f"Max_used_connections => {r['Max_used_connections']}")
 
+print("PROCESSLIST = ", res1)
 
 cur.close()
+
+
+
+
